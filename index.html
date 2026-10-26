@@ -1,0 +1,821 @@
+`<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audy Awalia Putri — Portofolio Mahasiswa Sistem Informasi</title>
+  <meta name="description"
+    content="Portofolio resmi Audy Awalia Putri - Mahasiswa Sistem Informasi, UI/UX Designer & Web Developer Enthusiast. Menghadirkan solusi digital yang estetik dan fungsional.">
+  <meta name="keywords"
+    content="Audy Awalia Putri, Portofolio Audy, UI/UX Designer, Web Developer, Mahasiswa Sistem Informasi, Desain Web">
+  <meta name="author" content="Audy Awalia Putri">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+
+  <!-- Google Fonts: Playfair Display (Serif Editorial) & Plus Jakarta Sans (Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="latte">
+
+  <!-- AESTHETIC SEARCH BAR PILL (Inspired by Reference) -->
+  <header class="top-announcement-wrap">
+    <div class="container">
+      <div class="search-pill-bar" id="searchPill">
+        <div class="search-pill-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <input type="text" id="globalSearchInput" placeholder="https://audy.portfolio/information-systems"
+          aria-label="Cari di portofolio">
+        <span class="search-hint-badge">Search</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="Beranda Audy">
+        <span class="brand-monogram">AAP</span>
+        <span class="brand-text">Audy<span class="accent-dot">.</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang Saya</a></li>
+        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <button class="btn-theme-toggle" id="themeToggle" aria-label="Ganti Tema">
+          <span class="theme-icon dark-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-icon light-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+
+        <!-- CTA Nav: Resume / CV -->
+        <a href="#cv-modal" class="btn btn-outline btn-sm open-cv-btn" id="openCvBtn">
+          <span>Lihat CV</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17l9.2-9.2M17 17V7H7" />
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="main-wrapper">
+
+    <!-- 1. HERO SECTION (BENTO GRID STYLE) -->
+    <section class="section hero-section" id="home">
+      <div class="container">
+
+        <!-- Bento Grid Layout -->
+        <div class="hero-bento-grid">
+
+          <!-- Bento Card 1: Main Editorial Showcase (Image + Editorial Headline) -->
+          <div class="bento-card bento-hero-main">
+            <div class="hero-image-wrap">
+              <img src="assets/curated-portfolio.png" alt="Audy di kafe" class="hero-profile-img"
+                id="heroProfileImg">
+              <div class="badge-status-pill">
+                <span class="pulse-indicator"></span>
+                <span>Open for Internship & Collabs</span>
+              </div>
+            </div>
+
+            <div class="hero-main-caption">
+              <div class="caption-header">
+                <span class="script-subtitle">The Curated Portfolio</span>
+                <h2 class="editorial-title">THE ICONIC</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Personal Identity Card -->
+          <div class="bento-card bento-hero-profile">
+            <div class="profile-meta-top">
+              <span class="location-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Pontianak Barat, Kalbar
+              </span>
+              <span class="degree-tag">S1 Sistem Informasi</span>
+            </div>
+
+            <div class="profile-hero-content">
+              <h1 class="hero-name">Audy Awalia Putri<span class="accent-period">.</span></h1>
+              <p class="hero-tagline">
+                Mahasiswa Sistem Informasi
+              </p>
+              <p class="hero-bio-short">
+                Selamat tinggal masa SMA, selamat datang di dunia coding tipis-tipis dan analisis bisnis!
+              </p>
+            </div>
+
+            <!-- Hero CTAs -->
+            <div class="hero-cta-group">
+              <a href="#contact" class="btn btn-secondary">
+                <span>Hubungi Saya</span>
+              </a>
+              <button class="btn btn-outline" id="heroCvBtn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh CV</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Bento Card 3: Instagram Style Creator Mini Widget (Reference Match) -->
+          <div class="bento-card bento-social-widget">
+            <div class="social-widget-header">
+              <div class="widget-user">
+                <span class="widget-plus">+</span>
+                <span class="widget-username">@liawallov_</span>
+              </div>
+              <div class="widget-icons">
+                <span class="notification-pill">3+</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </div>
+            </div>
+
+            <div class="social-widget-body">
+              <h3 class="social-widget-name">Audy Awalia Putri</h3>
+              <p class="social-widget-stats"><strong>232</strong> followers <span class="dot-sep">•</span>
+                <strong>266</strong> following
+              </p>
+
+              <div class="social-widget-nav-bar">
+                <span class="widget-icon active" title="Feed">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  </svg>
+                </span>
+                <span class="widget-icon" title="Reels">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  </svg>
+                </span>
+                <span class="widget-icon" title="Designs">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </span>
+                <span class="widget-icon" title="Search">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="social-widget-actions">
+                <a href="#about" class="btn-widget-pill">Profile Bio</a>
+                <a href="#contact" class="btn-widget-pill active">Let's Connect</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Spotify Playlist Card -->
+          <div class="bento-card bento-ambient-player">
+            <div class="player-top">
+              <span class="player-badge">Spotify Playlist 🎧</span>
+              <a href="https://open.spotify.com/playlist/504nBAMRtWDaVoSW5B4WIW?si=_2JJ_5P0TfeW7mNLRPPa7w&amp;utm_source=copy-link&amp;pt=d722adc7b6b6d7bed8a8423f06761a72&amp;pi=3TMRBzcrTe2O7" target="_blank" rel="noopener noreferrer" class="sound-toggle-btn" aria-label="Buka di Spotify">
+                <span class="sound-btn-text">Buka di Spotify</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M7 17l9.2-9.2M17 17V7H7" />
+                </svg>
+              </a>
+            </div>
+            <a href="https://open.spotify.com/playlist/504nBAMRtWDaVoSW5B4WIW?si=_2JJ_5P0TfeW7mNLRPPa7w&amp;utm_source=copy-link&amp;pt=d722adc7b6b6d7bed8a8423f06761a72&amp;pi=3TMRBzcrTe2O7" target="_blank" rel="noopener noreferrer" class="player-info" style="text-decoration: none; cursor: pointer;">
+              <div class="sound-wave playing" id="soundWave">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+              <div class="player-details">
+                <span class="song-title">Audy's Spotify Playlist 🎵</span>
+                <span class="song-artist">Klik untuk memutar lagu langsung di Spotify ↗</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TENTANG SAYA (ABOUT ME) -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Mengenal Lebih Dekat</h2>
+          <p class="section-subtitle">Kombinasi antara rasa ingin tahu akademis, estetika visual, dan empati pengguna.
+          </p>
+        </div>
+
+        <div class="about-bento-grid">
+
+          <!-- About Card 1: Narrative Story -->
+          <div class="bento-card about-card-narrative">
+            <div class="card-icon-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Profil Pribadi</span>
+            </div>
+
+            <h3 class="about-card-heading">Halo! Saya Audy Awalia Putri</h3>
+            <p class="about-text">
+              Kalau ditanya anak <strong>Sistem Informasi</strong> itu belajar apa, jawabannya simpel: kita belajar cara <em>ngebawa bisnis konvensional ke dunia digital</em>.
+            </p>
+            <p class="about-text">
+              Kita nggak se-ekstrem anak Teknik Informatika yang fokusnya melulu ke dalam mesin atau kode yang rumit banget. <strong>Kita berdiri tepat di tengah-tengah</strong>. Kita ngobrol sama programmer pakai bahasa komputer, terus kita ngobrol sama bos perusahaan pakai bahasa bisnis. Seru kan?
+            </p>
+            <p class="about-text">
+              Menjadi seorang <strong>komunikator digital</strong> yang dicari oleh semua industri zaman sekarang adalah misi yang sedang saya bangun sejak bangku awal perkuliahan ini.
+            </p>
+
+            <div class="about-details-table">
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-val">Mahasiswa Aktif Semester 1</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Program Studi:</span>
+                <span class="detail-val">S1 Sistem Informasi</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Fokus Minat:</span>
+                <span class="detail-val">Belum Ada (Terbuka untuk Eksplorasi Dunia IT & Desain)</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Domisili:</span>
+                <span class="detail-val">Pontianak Barat, Kalimantan Barat</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Card 2: "WHO'S AUDY?" Word Cloud / Personality Tag (Reference Match) -->
+          <div class="bento-card about-card-words">
+            <div class="words-card-header">
+              <h3 class="words-title">WHO’S AUDY?</h3>
+              <div class="horizontal-line"></div>
+            </div>
+
+            <div class="words-cloud-container">
+              <p class="words-cloud-text">
+                Halo, perkenalkan, nama saya Audy Awalia Putri. Saya berasal dari MAN 1 Pontianak dan merupakan anak
+                pertama dari empat bersaudara. Saya memilih jurusan Sistem Informasi karena tertarik pada integrasi
+                antara teknologi informasi dan dunia bisnis. Saya melihat perkembangan teknologi tidak akan berjalan
+                optimal tanpa manajemen dan strategi penerapan yang tepat dalam sebuah organisasi.
+              </p>
+            </div>
+          </div>
+
+          <!-- About Card 3: Graduation Photo -->
+          <div class="bento-card about-card-visual">
+            <div class="visual-img-container">
+              <img src="assets/profile.jpg" alt="Foto Audy bersama ibu di acara wisuda" class="about-flatlay-img">
+            </div>
+          </div>
+
+          <!-- About Card 4: Childhood Photo -->
+          <div class="bento-card about-card-visual">
+            <div class="visual-img-container">
+              <img src="assets/audy-childhood.png" alt="Foto Audy saat kecil" class="about-flatlay-img">
+            </div>
+          </div>
+
+          <!-- About Card 5: PMR Group Photo -->
+          <div class="bento-card about-card-visual">
+            <div class="visual-img-container">
+              <img src="assets/audy-pmr-group.png" alt="Foto bersama anggota PMR" class="about-flatlay-img">
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PENGALAMAN & RIWAYAT (EXPERIENCE & EDUCATION) -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Track Record</span>
+          <h2 class="section-title">Pengalaman &amp; Riwayat</h2>
+          <p class="section-subtitle">Jejak langkah kontribusi organisasi, kepanitiaan, serta rekam jejak akademis dan
+            prestasi.</p>
+        </div>
+
+        <!-- Section Switcher Tabs -->
+        <div class="exp-tabs-container">
+          <button class="exp-tab-btn active" data-target="org-panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Pengalaman Organisasi &amp; Kepanitiaan</span>
+          </button>
+          <button class="exp-tab-btn" data-target="edu-panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            <span>Pendidikan &amp; Prestasi</span>
+          </button>
+        </div>
+
+        <!-- Panel 1: Organisasi & Kepanitiaan -->
+        <div class="exp-panel active" id="org-panel">
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <div class="role-group">
+                    <span class="badge-role">Ekstrakurikuler</span>
+                    <h3 class="role-title">Anggota Palang Merah Remaja (PMR)</h3>
+                    <h4 class="company-name">Ekstrakurikuler PMR</h4>
+                  </div>
+                  <span class="timeline-period">2023 — 2026</span>
+                </div>
+                <p class="timeline-desc">
+                  Aktif mengikuti kegiatan ekstrakurikuler Palang Merah Remaja (PMR) sebagai anggota.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag-pill">Palang Merah Remaja</span>
+                  <span class="tag-pill">Anggota</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <div class="role-group">
+                    <span class="badge-role">Organisasi</span>
+                    <h3 class="role-title">Ketua Bidang Kaderisasi</h3>
+                    <h4 class="company-name">PIK-R Senja Remaja</h4>
+                  </div>
+                </div>
+                <p class="timeline-desc">
+                  Memimpin divisi kaderisasi di PIK-R Senja Remaja.
+                </p>
+                <div class="timeline-tags">
+                  <span class="tag-pill">Kaderisasi</span>
+                  <span class="tag-pill">Ketua Bidang</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Panel 2: Pendidikan & Prestasi -->
+        <div class="exp-panel" id="edu-panel">
+          <div class="edu-grid">
+
+            <!-- Edu Card 1 -->
+            <div class="bento-card edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon">🎓</div>
+                <span class="edu-year">2026 — Sekarang</span>
+              </div>
+              <h3 class="edu-degree">S1 Sistem Informasi</h3>
+              <h4 class="edu-institution">Fakultas Matematika dan Ilmu Pengetahuan Alam</h4>
+              <p class="edu-note">
+                Fokus studi pada Analisis &amp; Perancangan Sistem, Interaksi Manusia &amp; Komputer (IMK), Pemrograman
+                Web, dan Manajemen Basis Data.
+              </p>
+              <div class="gpa-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                <span>Status: Mahasiswa Aktif (Semester 1)</span>
+              </div>
+            </div>
+
+            <!-- Edu Card 2 -->
+            <div class="bento-card edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon">🏫</div>
+                <span class="edu-year">2023 — 2026</span>
+              </div>
+              <h3 class="edu-degree">Pendidikan Menengah Atas</h3>
+              <h4 class="edu-institution">MAN 1 Pontianak</h4>
+              <p class="edu-note">
+                Aktif dalam ekstrakurikuler Palang Merah Remaja (PMR).
+              </p>
+              <div class="gpa-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Rata-Rata Nilai Akhir: 84.00</span>
+              </div>
+            </div>
+
+            <!-- Achievements Card -->
+            <div class="bento-card achievements-card">
+              <h3 class="achievements-title">Prestasi &amp; Penghargaan</h3>
+              <div class="achieve-list">
+
+                <div class="achieve-item">
+                  <div class="trophy-badge">🏆</div>
+                  <div class="achieve-info">
+                    <span class="achieve-name">Juara 1 Lomba Ular Tangga PMR Tingkat Provinsi</span>
+                    <span class="achieve-org">Palang Merah Remaja (PMR)</span>
+                    <p class="achieve-sub">Meraih juara pertama dalam lomba Ular Tangga PMR tingkat provinsi.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. KONTAK & SOSIAL MEDIA (CONTACT / FOOTER) -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Mari Berkolaborasi!</h2>
+          <p class="section-subtitle">Tertarik berdiskusi proyek, tawaran magang, atau sekadar berbagi cerita seputar
+            UI/UX &amp; kopi?</p>
+        </div>
+
+        <div class="contact-bento-grid">
+
+          <!-- Contact Info Card -->
+          <div class="bento-card contact-info-card">
+            <h3 class="contact-card-title">Informasi &amp; Tautan Langsung</h3>
+            <p class="contact-card-desc">
+              Pintu selalu terbuka untuk diskusi hangat mengenai peluang magang, proyek freelance, atau kolaborasi
+              kreatif lainnya.
+            </p>
+
+            <div class="contact-direct-items">
+
+              <!-- Email Item with Copy Button -->
+              <div class="direct-item">
+                <div class="direct-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <span class="direct-label">Email Utama</span>
+                  <a href="mailto:audyawaliaputri@gmail.com" class="direct-link">audyawaliaputri@gmail.com</a>
+                </div>
+                <button class="btn-copy-email" id="copyEmailBtn" title="Salin Email">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- WhatsApp Quick Chat -->
+              <div class="direct-item">
+                <div class="direct-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <span class="direct-label">WhatsApp Direct</span>
+                  <a href="https://wa.me/6281515321882?text=Halo%20Audy,%20saya%20tertarik%20dengan%20portofolio%20Anda!"
+                    target="_blank" rel="noopener noreferrer" class="direct-link">081515321882</a>
+                </div>
+                <a href="https://wa.me/6281515321882?text=Halo%20Audy,%20saya%20tertarik%20dengan%20portofolio%20Anda!"
+                  target="_blank" rel="noopener noreferrer" class="btn-external-link" title="Buka WhatsApp">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- GitHub Item -->
+              <div class="direct-item">
+                <div class="direct-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <span class="direct-label">GitHub Repository</span>
+                  <a href="https://github.com/Audysisfo" target="_blank" rel="noopener noreferrer"
+                    class="direct-link">github.com/Audysisfo</a>
+                </div>
+                <a href="https://github.com/Audysisfo" target="_blank" rel="noopener noreferrer"
+                  class="btn-external-link" title="Buka GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Instagram Item -->
+              <div class="direct-item">
+                <div class="direct-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <span class="direct-label">Instagram Portfolio</span>
+                  <a href="https://www.instagram.com/liawallov_?mdxt=MTVjcDJyM2tlOHJ3cA==" target="_blank"
+                    rel="noopener noreferrer" class="direct-link">@liawallov_</a>
+                </div>
+                <a href="https://www.instagram.com/liawallov_?mdxt=MTVjcDJyM2tlOHJ3cA==" target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-external-link" title="Buka Instagram">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Download CV callout box -->
+            <div class="cv-callout-box">
+              <div class="cv-callout-text">
+                <strong>Ingin meninjau ringkasan lengkap?</strong>
+                <p>Unduh berkas CV resmi dalam format PDF standar ATS.</p>
+              </div>
+              <button class="btn btn-primary btn-sm open-cv-btn">Unduh CV PDF</button>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="bento-card contact-form-card">
+            <h3 class="contact-card-title">Kirim Pesan Cepat</h3>
+            <p class="contact-card-desc">Isi formulir di bawah ini dan saya akan merespons dalam waktu 1x24 jam.</p>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="senderName" class="form-label">Nama Lengkap <span class="required">*</span></label>
+                  <input type="text" id="senderName" class="form-input" placeholder="Misal: Dimas Pratama" required>
+                  <span class="form-error" id="nameError">Mohon masukkan nama Anda.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label">Alamat Email <span class="required">*</span></label>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="nama@perusahaan.com" required>
+                  <span class="form-error" id="emailError">Format email tidak valid.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subjectSelect" class="form-label">Tujuan / Keperluan <span class="required">*</span></label>
+                <select id="subjectSelect" class="form-input form-select" required>
+                  <option value="" disabled selected>Pilih keperluan...</option>
+                  <option value="Tawaran Magang (Internship)">Tawaran Magang (Internship UI/UX / Web)</option>
+                  <option value="Proyek Freelance">Proyek Freelance &amp; Desain Web</option>
+                  <option value="Kolaborasi Kampus/Komunitas">Kolaborasi Komunitas / Kampus</option>
+                  <option value="Sapa Ramah & Diskusi">Sapa Ramah &amp; Diskusi</option>
+                </select>
+                <span class="form-error" id="subjectError">Silakan pilih keperluan Anda.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">Pesan Anda <span class="required">*</span></label>
+                <textarea id="senderMessage" class="form-input form-textarea" rows="4"
+                  placeholder="Tuliskan detail pesan, ide, atau tawaran Anda di sini..." required></textarea>
+                <span class="form-error" id="messageError">Pesan tidak boleh kosong (minimal 10 karakter).</span>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary btn-block" id="submitFormBtn">
+                  <span>Kirim Pesan Sekarang</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-brand">
+            <span class="brand-monogram">AAP</span>
+            <span class="footer-name">Audy Awalia Putri</span>
+          </div>
+          <p class="footer-tagline">Mahasiswa Sistem Informasi</p>
+        </div>
+
+        <div class="footer-center">
+          <p class="footer-copy">
+            &copy; 2026 Audy Awalia Putri. Dirancang dengan penuh ketelitian estetika &amp; kode yang bersih.
+          </p>
+        </div>
+
+        <div class="footer-right">
+          <a href="#home" class="btn-back-to-top" id="backToTopBtn" aria-label="Kembali ke atas">
+            <span>Kembali ke Atas</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: CV / RESUME PREVIEW MODAL -->
+  <div class="modal-backdrop" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="modal-container modal-cv-container">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <h3 id="cvModalTitle" class="modal-title">Curriculum Vitae — Audy Awalia Putri</h3>
+          <span class="modal-subtitle">Format ATS-Friendly &amp; Professional Summary</span>
+        </div>
+        <button class="modal-close-btn" id="closeCvModal" aria-label="Tutup jendela CV">&times;</button>
+      </div>
+
+      <div class="modal-body cv-paper-view">
+        <div class="cv-paper">
+          <div class="cv-header-block">
+            <h2 class="cv-name">AUDY AWALIA PUTRI</h2>
+            <p class="cv-headline">Mahasiswa Sistem Informasi</p>
+            <div class="cv-contacts">
+              <span>Pontianak Barat, Indonesia</span> &bull;
+              <span>audyawaliaputri@gmail.com</span> &bull;
+              <span>081515321882</span>
+            </div>
+          </div>
+
+          <div class="cv-section-block">
+            <h4 class="cv-sec-title">RINGKASAN PROFESIONAL</h4>
+            <div class="cv-divider"></div>
+            <p class="cv-para">
+              Mahasiswa Sistem Informasi (Semester 1) yang antusias mempelajari dunia teknologi, perancangan antarmuka, dan analisa sistem bisnis digital. Memiliki dedikasi tinggi, komunikatif, serta siap belajar dan berkolaborasi dalam proyek-proyek kreatif.
+            </p>
+          </div>
+
+          <div class="cv-section-block">
+            <h4 class="cv-sec-title">PENDIDIKAN</h4>
+            <div class="cv-divider"></div>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <strong>S1 Sistem Informasi — Fakultas Matematika dan Ilmu Pengetahuan Alam</strong>
+                <span class="cv-date">2026 — Sekarang</span>
+              </div>
+              <p class="cv-item-sub">Status: <strong>Mahasiswa Aktif</strong>. Domisili: Pontianak Barat, Kalimantan Barat.</p>
+            </div>
+          </div>
+
+          <div class="cv-section-block">
+            <h4 class="cv-sec-title">PENGALAMAN ORGANISASI</h4>
+            <div class="cv-divider"></div>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <strong>Anggota Palang Merah Remaja (PMR) — Ekstrakurikuler PMR</strong>
+                <span class="cv-date">2023 — 2026</span>
+              </div>
+              <p class="cv-item-sub">Aktif mengikuti kegiatan ekstrakurikuler Palang Merah Remaja (PMR) sebagai anggota.</p>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-head">
+                <strong>Ketua Bidang Kaderisasi — PIK-R Senja Remaja</strong>
+              </div>
+              <p class="cv-item-sub">Memimpin divisi kaderisasi di PIK-R Senja Remaja.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="printCvBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Cetak / Simpan PDF</span>
+        </button>
+        <button class="btn btn-primary" id="downloadCvActionBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Unduh Berkas CV (.pdf)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-wrapper" id="toastContainer"></div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+
+</html>
